@@ -29,7 +29,6 @@ function GetLocationUrlGen({ location, radius, alitutude, category, type }) {
 
   return (
     <div>
-      {/* {console.log(url)} */}
       <GetApi url={url} type={type} />
     </div>
   );

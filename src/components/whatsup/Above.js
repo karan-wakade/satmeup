@@ -53,11 +53,6 @@ function Above({ type }) {
           +
         </button>
 
-        {/* <h2>set category</h2>
-        <button onClick={() => setCategory(category - 1)}>-</button>
-        <h3>{category}</h3>
-        <button onClick={() => setCategory(category + 1)}>+</button> */}
-
         <h2>select category</h2>
         <select onChange={handleSelect}>
           {categories.map((cat, index) => (

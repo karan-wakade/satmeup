@@ -4,16 +4,9 @@ import satellites from "../satellites";
 
 function GetPasses({ type }) {
   const [next, setNext] = useState(false);
-  // const [value, setValue] = useState("");
   const [noradid, setNoradid] = useState(25544);
   const [days, setDays] = useState(5); // 0-10
   const [minvisibility, setMinvisibility] = useState(200);
-
-  // const handleChange = (event) => {
-  //   const result = event.target.value.replace(/\D/g, "");
-  //   setValue(result);
-  //   setNoradid(parseInt(result));
-  // };
 
   const handleSelect = (event) => {
     setNoradid(event.target.value);
@@ -23,12 +16,6 @@ function GetPasses({ type }) {
     return (
       <div>
         <h1>Get satellite location</h1>
-        {/* <input
-          type="text"
-          placeholder="ENTER NORAD ID"
-          value={value}
-          onChange={handleChange}
-        /> */}
 
         <h2>set number of days(1-10)</h2>
         <button onClick={() => (days > 1 ? setDays(days - 1) : setDays(days))}>

@@ -2,22 +2,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import Above from "./components/whatsup/Above";
-import AboutSat from "./components/gettll/AboutSat";
+import AboutSat from "./components/gettle/AboutSat";
 import SatLocation from "./components/getsatcoord/satLocation";
 import GetPasses from "./components/getpasses/getPasses";
-import ApiTest from "./components/apitest/apiTest";
-import ApiClassTest from "./components/apitest/apiClassTest";
-import SeperateTest from "./components/apitest/seperateTest";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       {/* <SeperateTest /> */}
-//       <ApiTest />
-//       {/* <ApiClassTest /> */}
-//     </div>
-//   );
-// }
 
 function App() {
   const [type, setType] = useState(0);

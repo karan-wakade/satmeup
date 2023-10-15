@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
-
-// function ListItem(props) {
-//   return <li>{props.value}</li>;
-// }
+import React from "react";
 
 function FetchedData({ data, type }) {
   const listItems2 = data.positions?.map((position) => (
@@ -41,6 +37,14 @@ function FetchedData({ data, type }) {
     </li>
   ));
 
+  // function AboveLogic() {
+  //   if (data.info.satcount) {
+  //     return <ul>{listItems4}</ul>;
+  //   } else {
+  //     return <h3>NO TRACEABLE SATELLITES ABOVE YOU AT THE MOMENT</h3>;
+  //   }
+  // }
+
   const listItems4 = data.above?.map((sat) => (
     <li>
       satid: {sat.satid}, satname: {sat.satname}, international designator:{" "}
@@ -53,7 +57,6 @@ function FetchedData({ data, type }) {
   if (type == 1) {
     return (
       <div>
-        {/* {console.log(data)} */}
         <h1>Satellite TLE</h1>
         <h4>{data.tle}</h4>
       </div>
@@ -61,7 +64,6 @@ function FetchedData({ data, type }) {
   } else if (type == 2) {
     return (
       <div>
-        {/* {console.log(data.positions)} */}
         <h1>Satellite Positions</h1>
         <ul>{listItems2}</ul>
       </div>
@@ -69,7 +71,6 @@ function FetchedData({ data, type }) {
   } else if (type == 3) {
     return (
       <div>
-        {/* {console.log(data)} */}
         <h1>Satellite Passes</h1>
         <ul>{listItems3}</ul>
       </div>
@@ -77,19 +78,12 @@ function FetchedData({ data, type }) {
   } else if (type == 4) {
     return (
       <div>
-        {/* {console.log(data)} */}
         <h1>Satellites Above you</h1>
+        {/* <AboveLogic /> */}
         <ul>{listItems4}</ul>
       </div>
     );
   }
-
-  // return (
-  //   <div>
-  //     {console.log(data)}
-  //     <h1>Fetched Data Block</h1>
-  //   </div>
-  // );
 }
 
 export default FetchedData;

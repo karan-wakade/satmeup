@@ -1,16 +1,11 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-// import GetApi from "./getApi";
-// import apikey from "./apikey";
 import GetLocationUrlGen from "./whatsup/getLocationUrlGen";
 import GetPassesUrlGen from "./getpasses/getPassesUrlGen";
 import SatCoordUrlGen from "./getsatcoord/satCoordUrlGen";
 
 function GetUserCoords(props) {
-  // const [url, setUrl] = useState("");
-  // const apiKey = apikey();
   const [location, setLocation] = useState({});
-  // const [type, setType] = useState(props.type);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {

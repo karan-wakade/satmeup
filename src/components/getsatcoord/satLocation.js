@@ -4,15 +4,8 @@ import satellites from "../satellites";
 
 function SatLocation({ type }) {
   const [next, setNext] = useState(false);
-  // const [value, setValue] = useState("");
   const [noradid, setNoradid] = useState(25544);
-  const [seconds, setSeconds] = useState(150); // 0-300
-
-  // const handleChange = (event) => {
-  //   const result = event.target.value.replace(/\D/g, "");
-  //   setValue(result);
-  //   setNoradid(parseInt(result));
-  // };
+  const [seconds, setSeconds] = useState(150);
 
   const handleSelect = (event) => {
     setNoradid(event.target.value);
@@ -22,12 +15,6 @@ function SatLocation({ type }) {
     return (
       <div>
         <h1>Get satellite location</h1>
-        {/* <input
-          type="text"
-          placeholder="ENTER NORAD ID"
-          value={value}
-          onChange={handleChange}
-        /> */}
         <h2>set time in seconds(1-300)</h2>
         <button
           onClick={() =>
