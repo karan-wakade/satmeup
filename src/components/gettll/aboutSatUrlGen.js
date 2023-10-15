@@ -3,15 +3,16 @@ import React, { useState } from "react";
 import GetApi from "../getApi";
 import apikey from "../apikey";
 
-function SatInfoUrlGen(props) {
+function AboutSatUrlGen({ noradid, type }) {
   const apiKey = apikey();
   const [url, setUrl] = useState("");
 
+  // https://api.n2yo.com/rest/v1/satellite/tle/{noradid}&apiKey={apikey}
+
   useEffect(() => {
-    // console.log(props.url);
     setUrl(
       "https://api.n2yo.com/rest/v1/satellite/tle/" +
-        props.noradid +
+        noradid +
         "&apiKey=" +
         apiKey
     );
@@ -19,9 +20,9 @@ function SatInfoUrlGen(props) {
 
   return (
     <div>
-      <GetApi url={url} type={props.type} />
+      <GetApi url={url} type={type} />
     </div>
   );
 }
 
-export default SatInfoUrlGen;
+export default AboutSatUrlGen;

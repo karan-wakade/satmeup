@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import GetApi from "../getApi";
 import apikey from "../apikey";
 
-function GetLocationUrlGen(props) {
-  const [location, setLocation] = useState(props.location);
+function GetLocationUrlGen({ location, radius, alitutude, category, type }) {
   const [url, setUrl] = useState("");
   const apiKey = apikey();
+
+  // https://api.n2yo.com/rest/v1/satellite/above/{observer_lat}/{observer_lng}/{observer_alt}/{search_radius}/{category_id}/&apiKey={apiKey}
 
   useEffect(() => {
     setUrl(
@@ -15,22 +16,21 @@ function GetLocationUrlGen(props) {
         "/" +
         location.longitude +
         "/" +
-        props.alitutude +
+        alitutude +
         "/" +
-        props.radius +
+        radius +
         "/" +
-        props.category +
+        category +
         "/" +
         "&apiKey=" +
         apiKey
     );
   }, []);
 
-  //   const tempUrl = "https://api.n2yo.com/rest/v1/satellite/tle/25544&apiKey=" + apiKey;
   return (
     <div>
-      {url}
-      <GetApi url={url} type={props.type} />
+      {/* {console.log(url)} */}
+      <GetApi url={url} type={type} />
     </div>
   );
 }

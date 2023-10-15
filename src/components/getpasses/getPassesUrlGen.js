@@ -1,28 +1,28 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import GetApi from "../../getApi";
+import GetApi from "../getApi";
 import apikey from "../apikey";
 
-function GetPassesUrlGen(props) {
+function GetPassesUrlGen({ location, noradid, days, minvisibility, type }) {
   const apiKey = apikey();
   const [url, setUrl] = useState("");
 
+  // https://api.n2yo.com/rest/v1/satellite/visualpasses/{id}/{observer_lat}/{observer_lng}/{observer_alt}/{days}/{min_visibility}/&apiKey=589P8Q-SDRYX8-L842ZD-5Z9
+
   useEffect(() => {
-    // console.log(props.url);
-    //api.n2yo.com/rest/v1/satellite/visualpasses/25544/41.702/-76.014/0/2/300/&apiKey=589P8Q-SDRYX8-L842ZD-5Z9
     setUrl(
       "https://api.n2yo.com/rest/v1/satellite/visualpasses/" +
-        props.noradid +
+        noradid +
         "/" +
-        props.location.latitude +
+        location.latitude +
         "/" +
-        props.location.longitude +
+        location.longitude +
         "/" +
         0 +
         "/" +
-        props.days +
+        days +
         "/" +
-        props.minvisibility +
+        minvisibility +
         "/" +
         "&apiKey=" +
         apiKey
@@ -31,7 +31,7 @@ function GetPassesUrlGen(props) {
 
   return (
     <div>
-      <GetApi url={url} type={props.type} />
+      <GetApi url={url} type={type} />
     </div>
   );
 }

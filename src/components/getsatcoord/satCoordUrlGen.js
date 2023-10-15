@@ -1,26 +1,26 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import GetApi from "../../getApi";
+import GetApi from "../getApi";
 import apikey from "../apikey";
 
-function SatCoordUrlGen(props) {
+function SatCoordUrlGen({ location, noradid, seconds, type }) {
   const apiKey = apikey();
   const [url, setUrl] = useState("");
 
+  // https://api.n2yo.com/rest/v1/satellite/positions/{id}/{observer_lat}/{observer_lng}/{observer_alt}/{seconds}/&apiKey={apiKey}
+
   useEffect(() => {
-    // console.log(props.url);
-    //api.n2yo.com/rest/v1/satellite/positions/25544/41.702/-76.014/0/2/&apiKey=589P8Q-SDRYX8-L842ZD-5Z9
-    https: setUrl(
+    setUrl(
       "https://api.n2yo.com/rest/v1/satellite/positions/" +
-        props.noradid +
+        noradid +
         "/" +
-        props.location.latitude +
+        location.latitude +
         "/" +
-        props.location.longitude +
+        location.longitude +
         "/" +
         0 +
         "/" +
-        props.seconds +
+        seconds +
         "/" +
         "&apiKey=" +
         apiKey
@@ -29,7 +29,7 @@ function SatCoordUrlGen(props) {
 
   return (
     <div>
-      <GetApi url={url} type={props.type} />
+      <GetApi url={url} type={type} />
     </div>
   );
 }

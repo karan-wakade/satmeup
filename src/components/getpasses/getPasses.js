@@ -1,44 +1,76 @@
-import { useEffect } from "react";
 import React, { useState } from "react";
-import SatInfo from "./satInfoUrlGen";
+import GetUserCoords from "../getUserCoords";
+import satellites from "../satellites";
 
-function GetPasses() {
+function GetPasses({ type }) {
   const [next, setNext] = useState(false);
-  //   const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
   const [noradid, setNoradid] = useState(25544);
   const [days, setDays] = useState(5); // 0-10
   const [minvisibility, setMinvisibility] = useState(200);
 
-  const handleChange = (event) => {
-    const result = event.target.value.replace(/\D/g, "");
+  // const handleChange = (event) => {
+  //   const result = event.target.value.replace(/\D/g, "");
+  //   setValue(result);
+  //   setNoradid(parseInt(result));
+  // };
 
-    // setValue(result);
-    setNoradid(parseInt(result));
+  const handleSelect = (event) => {
+    setNoradid(event.target.value);
   };
 
   if (!next) {
     return (
       <div>
         <h1>Get satellite location</h1>
-        <input
+        {/* <input
           type="text"
           placeholder="ENTER NORAD ID"
           value={value}
           onChange={handleChange}
-        />
+        /> */}
 
-        <h2>set number of days(0-10)</h2>
-        <button onClick={() => setDays(days - 1)}>-</button>
+        <h2>set number of days(1-10)</h2>
+        <button onClick={() => (days > 1 ? setDays(days - 1) : setDays(days))}>
+          -
+        </button>
         <h3>{days}</h3>
-        <button onClick={() => setDays(days + 1)}>+</button>
+        <button onClick={() => (days < 10 ? setDays(days + 1) : setDays(days))}>
+          +
+        </button>
 
         <h2>
           Minimum number of seconds the satellite should be considered optically
-          visible during the pass
+          visible during the pass(1-300)
         </h2>
-        <button onClick={() => setMinvisibility(minvisibility - 1)}>-</button>
+        <button
+          onClick={() =>
+            minvisibility > 1
+              ? setMinvisibility(minvisibility - 1)
+              : setMinvisibility(minvisibility)
+          }
+        >
+          -
+        </button>
         <h3>{minvisibility}</h3>
-        <button onClick={() => setMinvisibility(minvisibility + 1)}>+</button>
+        <button
+          onClick={() =>
+            minvisibility < 300
+              ? setMinvisibility(minvisibility + 1)
+              : setMinvisibility(minvisibility)
+          }
+        >
+          +
+        </button>
+
+        <h2>select satellite</h2>
+        <select onChange={handleSelect}>
+          {satellites.map((sat, index) => (
+            <option key={index} value={sat.noradid}>
+              {sat.name}
+            </option>
+          ))}
+        </select>
 
         <button onClick={() => setNext(!next)}>NEXT</button>
       </div>
@@ -50,7 +82,7 @@ function GetPasses() {
           noradid={noradid}
           days={days}
           minvisibility={minvisibility}
-          type={3}
+          type={type}
         />
       </div>
     );

@@ -5,24 +5,27 @@ import Above from "./components/whatsup/Above";
 import AboutSat from "./components/gettll/AboutSat";
 import SatLocation from "./components/getsatcoord/satLocation";
 import GetPasses from "./components/getpasses/getPasses";
+import ApiTest from "./components/apitest/apiTest";
+import ApiClassTest from "./components/apitest/apiClassTest";
+import SeperateTest from "./components/apitest/seperateTest";
 
 // function App() {
 //   return (
 //     <div className="App">
-//       {/* <FuncComp /> */}
-//       {/* <Above /> */}
+//       {/* <SeperateTest /> */}
+//       <ApiTest />
+//       {/* <ApiClassTest /> */}
 //     </div>
 //   );
 // }
 
 function App() {
-  // const [clicked, setClicked] = useState(false);
   const [type, setType] = useState(0);
 
   if (type == 0) {
     return (
       <div className="App">
-        <button onClick={() => setType(1)}>Get TLL</button>
+        <button onClick={() => setType(1)}>Get TLE</button>
         <button onClick={() => setType(2)}>Get satellite coordinates</button>
         <button onClick={() => setType(3)}>Get satellite passes</button>
         <button onClick={() => setType(4)}>See what's up</button>
@@ -32,25 +35,25 @@ function App() {
     if (type == 1) {
       return (
         <div className="App">
-          <AboutSat />
+          <AboutSat type={type} />
         </div>
       );
     } else if (type == 2) {
       return (
         <div className="App">
-          <SatLocation />
+          <SatLocation type={type} />
         </div>
       );
     } else if (type == 3) {
       return (
         <div className="App">
-          <GetPasses />
+          <GetPasses type={type} />
         </div>
       );
     } else if (type == 4) {
       return (
         <div className="App">
-          <Above />
+          <Above type={type} />
         </div>
       );
     }
