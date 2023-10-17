@@ -1,6 +1,6 @@
 const satellites = [
-  { noradid: 25544, name: "ISS" },
   { noradid: 20580, name: "HST" },
+  { noradid: 25544, name: "ISS" },
   { noradid: 36516, name: "SES1" },
   { noradid: 33591, name: "NOAA19" },
   { noradid: 29155, name: "GOES13" },

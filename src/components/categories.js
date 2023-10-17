@@ -1,6 +1,6 @@
 const categories = [
-  { name: "Geostationary", category: 10 },
   { name: "Starlink", category: 52 },
+  { name: "Geostationary", category: 10 },
   { name: "OneWeb", category: 53 },
   { name: "Iridium", category: 15 },
   { name: "Weather", category: 3 },
