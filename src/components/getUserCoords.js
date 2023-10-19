@@ -12,7 +12,6 @@ function GetUserCoords(props) {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLocation(position.coords);
-      console.log("navigator called");
     });
   }, []);
 

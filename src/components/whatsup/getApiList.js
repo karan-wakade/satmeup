@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 // import FetchedData from "./fetchedData";
 import AboveListRender from "./aboveListRender";
+import AbovePassesRender from "./aboveRender";
+import FetchedApiList from "./fetchedApiList";
 
 function GetApiList({ urlList }) {
   const [data, setData] = useState([]);
@@ -29,7 +31,9 @@ function GetApiList({ urlList }) {
 
   return (
     <div>
-      <AboveListRender data={data} />
+      {/* <AboveListRender data={data} /> */}
+      {/* <AbovePassesRender dataList={data} /> */}
+      <FetchedApiList dataList={data} />
     </div>
   );
 }
