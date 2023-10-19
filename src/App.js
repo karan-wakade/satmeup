@@ -12,29 +12,20 @@ function App() {
   const [type, setType] = useState(0);
 
   if (type == 0) {
-    // return (
-    //   <div className="App">
-    //     <button onClick={() => setType(1)}>Get TLE</button>
-    //     <button onClick={() => setType(2)}>Get satellite coordinates</button>
-    //     <button onClick={() => setType(3)}>Get satellite passes</button>
-    //     <button onClick={() => setType(4)}>See what's up</button>
-    //   </div>
-    // );
-
     return (
       <div className="mt-5">
         <Stack gap={2} className="col-md-5 mx-auto">
-          <Button variant="outline-secondary" onClick={() => setType(4)}>
-            Satellites Above You
+          <Button variant="light" onClick={() => setType(4)}>
+            Satellites above you
           </Button>
-          <Button variant="outline-secondary" onClick={() => setType(3)}>
+          <Button variant="secondary" onClick={() => setType(3)}>
             Satellite Passes
           </Button>
-          <Button variant="outline-secondary" onClick={() => setType(2)}>
+          <Button variant="secondary" onClick={() => setType(2)}>
             Satellite Coordinates
           </Button>
-          <Button variant="outline-secondary" onClick={() => setType(1)}>
-            Get TLE
+          <Button variant="secondary" onClick={() => setType(1)}>
+            Get satellite TLE
           </Button>
         </Stack>
       </div>

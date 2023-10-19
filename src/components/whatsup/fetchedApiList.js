@@ -11,39 +11,14 @@ import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
 
 function FetchedApiList({ dataList }) {
-  // if (type == 1) {
-  //   return (
-  //     <div>
-  //       <GetTleRender data={data} />
-  //     </div>
-  //   );
-  // } else if (type == 2) {
-  //   return (
-  //     <div>
-  //       <SatLocationRender data={data} />
-  //     </div>
-  //   );
-  // } else if (type == 3) {
-  //   return (
-  //     <div>
-  //       <SatPassesRender data={data} />
-  //     </div>
-  //   );
-  // } else if (type == 4) {
-  //   return (
-  //     <div>
-  //       <AbovePassesRender data={data} />
-  //     </div>
-  //   );
-  // }
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1200);
-  }, []);
+    }, 3000);
+    // console.log(dataList);
+  }, [dataList]);
 
   if (isLoading) {
     return (

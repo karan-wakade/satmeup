@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import GetApi from "../getApi";
 import apikey from "../apikey";
 import categories from "../categories";
 import GetApiList from "./getApiList";

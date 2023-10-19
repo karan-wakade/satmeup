@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import GetLocationUrlGen from "./whatsup/getLocationUrlGen";
+// import GetLocationUrlGen from "./whatsup/getLocationUrlGen";
 import GetPassesUrlGen from "./getpasses/getPassesUrlGen";
 import SatCoordUrlGen from "./getsatcoord/satCoordUrlGen";
-import GetApiList from "./whatsup/getApiList";
 import AboveUrlGen from "./whatsup/aboveUrlGen";
 
 function GetUserCoords(props) {

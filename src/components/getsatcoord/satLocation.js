@@ -20,42 +20,27 @@ function SatLocation({ type }) {
     setSeconds(event.target.value);
   };
 
+  function reload() {
+    window.location.reload(false);
+  }
+
   if (!next) {
     return (
       <div className="mt-5">
         <Container>
           <Row className="justify-content-md-center">
-            <h1>Get satellite location</h1>
-            {/* <h2>set time in seconds(1-300)</h2>
-        <button
-          onClick={() =>
-            seconds > 1 ? setSeconds(seconds - 1) : setSeconds(seconds)
-          }
-        >
-          -
-        </button>
-        <h3>{seconds}</h3>
-        <button
-          onClick={() =>
-            seconds < 300 ? setSeconds(seconds + 1) : setSeconds(seconds)
-          }
-        >
-          +
-        </button> */}
+            <h1>Get Satellite Location</h1>
+            <h2></h2>
+            <hr class="hr" />
 
-            <h2>set time in seconds(1-300)</h2>
+            <h3>Set Time(1-300s)</h3>
             <h3>{seconds}</h3>
             <Form.Range min="0" max="300" step="1" onChange={handleChange} />
 
-            <h2>select satellite</h2>
-            {/* <select onChange={handleSelect}>
-          {satellites.map((sat, index) => (
-            <option key={index} value={sat.noradid}>
-              {sat.name}
-            </option>
-          ))}
-        </select> */}
+            <h2></h2>
+            <hr class="hr" />
 
+            <h3>Select Satellite</h3>
             <Form.Select
               aria-label="Default select example"
               onChange={handleSelect}
@@ -67,10 +52,15 @@ function SatLocation({ type }) {
               ))}
             </Form.Select>
 
-            <Button variant="outline-secondary" onClick={() => setNext(!next)}>
+            <h4></h4>
+            <Button variant="light" onClick={() => setNext(!next)}>
               NEXT
             </Button>
-            {/* <button onClick={() => setNext(!next)}>NEXT</button> */}
+
+            <h4></h4>
+            <Button variant="secondary" onClick={reload}>
+              RESET
+            </Button>
           </Row>
         </Container>
       </div>

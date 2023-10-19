@@ -3,29 +3,10 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 function SatPassesRender({ data }) {
   const listItems = data.passes?.map((pass) => (
-    // <li>
-    //   azimuth for the start of this pass (relative to the observer, in degrees):
-    //   {pass.startAz}, azimuth for the start of this pass (relative to the
-    //   observer). Possible values: N, NE, E, SE, S, SW, W, NW: {pass.startAzCompass}, elevation for the start of this pass (relative to
-    //   the observer, in degrees): {pass.startEl}, Unix time for the start of this
-    //   pass. You should convert this UTC value to observer's time zone:{pass.startUTC}, azimuth for the max elevation of this pass (relative to
-    //   the observer, in degrees): {pass.maxAz}, azimuth for the max elevation of
-    //   this pass (relative to the observer): {pass.maxAzCompass}, max elevation
-    //   for this pass (relative to the observer, in degrees): {pass.maxEl}, Unix
-    //   time for the max elevation of this pass. You should convert this UTC value
-    //   to observer's time zone: {pass.maxUTC}, azimuth for the end of this pass
-    //   (relative to the observer, in degrees): {pass.endAz}, azimuth for the end
-    //   of this pass (relative to the observer): {pass.endAzCompass}, elevation
-    //   for the end of this pass (relative to the observer, in degrees): {pass.endEl}, Unix time for the end of this pass. You should convert this
-    //   UTC value to observer's time zone: {pass.endUTC}, Max visual magnitude of
-    //   the pass, same scale as star brightness. If magnitude cannot be
-    //   determined, the value is 100000: {pass.mag}, Total visible duration of
-    //   this pass (in seconds): {pass.duration},
-    // </li>
-
     <tr>
       <td>{pass.startAz}</td>
       <td>{pass.startAzCompass}</td>
@@ -44,13 +25,49 @@ function SatPassesRender({ data }) {
     </tr>
   ));
 
-  if (data.passes == []) {
+  function reload() {
+    window.location.reload(false);
+  }
+
+  if (data) {
     return (
       <div className="mt-5">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite Passes</h1>
-            <h3>Passes not traceable</h3>
+            <h2></h2>
+            <hr class="hr" />
+
+            <h4></h4>
+            <Button variant="secondary" onClick={reload}>
+              RESET
+            </Button>
+            <h2></h2>
+            <hr class="hr" />
+
+            <div class="overflow-auto">
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Azimuth(degrees)</th>
+                    <th>Azimuth(relative)</th>
+                    <th>Elevation</th>
+                    <th>Unix Time</th>
+                    <th>Azimuth(max elevation(degrees))</th>
+                    <th>Azimuth(max elevation(relative))</th>
+                    <th>Max elevation(degrees)</th>
+                    <th>Unix time(max elevation)</th>
+                    <th>Azimuth(end of pass(degrees))</th>
+                    <th>Azimuth(end of pass(relative))</th>
+                    <th>Elevation(end of pass(degrees))</th>
+                    <th>Unix time(end of pass)</th>
+                    <th>Max visual magnitude of the pass</th>
+                    <th>Visible duration of this pass (in seconds)</th>
+                  </tr>
+                </thead>
+                <tbody>{listItems}</tbody>
+              </Table>
+            </div>
           </Row>
         </Container>
       </div>
@@ -61,29 +78,16 @@ function SatPassesRender({ data }) {
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite Passes</h1>
-            {/* <ul>{listItems}</ul> */}
+            <h2></h2>
+            <hr class="hr" />
+            <h3>Passes not traceable</h3>
 
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>azimuth(degrees)</th>
-                  <th>azimuth(relative)</th>
-                  <th>elevation</th>
-                  <th>Unix time</th>
-                  <th>azimuth(max elevation-degrees)</th>
-                  <th>azimuth(max elevation-relative)</th>
-                  <th>max elevation(degrees)</th>
-                  <th>Unix time(max elevation)</th>
-                  <th>azimuth for the end of this pass(degrees)</th>
-                  <th>azimuth for the end of this pass(relative)</th>
-                  <th>elevation for the end of this pass(degrees)</th>
-                  <th>Unix time for the end of this pass</th>
-                  <th>Max visual magnitude of the pass</th>
-                  <th>Total visible duration of this pass (in seconds)</th>
-                </tr>
-              </thead>
-              <tbody>{listItems}</tbody>
-            </Table>
+            <h4></h4>
+            <Button variant="secondary" onClick={reload}>
+              RESET
+            </Button>
+            <h2></h2>
+            <hr class="hr" />
           </Row>
         </Container>
       </div>

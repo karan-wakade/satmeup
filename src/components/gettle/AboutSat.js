@@ -15,21 +15,21 @@ function AboutSat({ type }) {
     setNoradid(event.target.value);
   };
 
+  function reload() {
+    window.location.reload(false);
+  }
+
   if (!next) {
     return (
       <div className="mt-5">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Get details of specific satellite</h1>
-            <h2>select satellite</h2>
-            {/* <select onChange={handleSelect}>
-          {satellites.map((sat, index) => (
-            <option key={index} value={sat.noradid}>
-              {sat.name}
-            </option>
-          ))}
-        </select> */}
 
+            <h2></h2>
+            <hr class="hr" />
+
+            <h3>Select Satellite</h3>
             <Form.Select
               aria-label="Default select example"
               onChange={handleSelect}
@@ -42,10 +42,14 @@ function AboutSat({ type }) {
             </Form.Select>
 
             <h4></h4>
-            <Button variant="outline-secondary" onClick={() => setNext(!next)}>
+            <Button variant="light" onClick={() => setNext(!next)}>
               NEXT
             </Button>
-            {/* <button onClick={() => setNext(!next)}>NEXT</button> */}
+
+            <h4></h4>
+            <Button variant="secondary" onClick={reload}>
+              RESET
+            </Button>
           </Row>
         </Container>
       </div>
