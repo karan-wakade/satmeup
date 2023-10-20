@@ -11,7 +11,7 @@ function GetTleRender({ data }) {
 
   if (data) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite info</h1>
@@ -31,7 +31,7 @@ function GetTleRender({ data }) {
     );
   } else {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite info</h1>

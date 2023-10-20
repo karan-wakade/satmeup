@@ -21,7 +21,7 @@ function AboutSat({ type }) {
 
   if (!next) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Get details of specific satellite</h1>

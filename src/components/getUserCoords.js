@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-// import GetLocationUrlGen from "./whatsup/getLocationUrlGen";
 import GetPassesUrlGen from "./getpasses/getPassesUrlGen";
 import SatCoordUrlGen from "./getsatcoord/satCoordUrlGen";
 import AboveUrlGen from "./whatsup/aboveUrlGen";
@@ -29,7 +28,6 @@ function GetUserCoords(props) {
   } else if (props.type == 4) {
     return (
       <div>
-        {/* <GetLocationUrlGen location={location} {...props} /> */}
         <AboveUrlGen location={location} {...props} />
       </div>
     );

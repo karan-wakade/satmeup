@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
 import GetApi from "../getApi";
-import apikey from "../apikey";
 
 function SatCoordUrlGen({ location, noradid, seconds, type }) {
-  const apiKey = apikey();
+  const apiKey = process.env.REACT_APP_API_KEY;
   const [url, setUrl] = useState("");
 
   // https://api.n2yo.com/rest/v1/satellite/positions/{id}/{observer_lat}/{observer_lng}/{observer_alt}/{seconds}/&apiKey={apiKey}
 
   useEffect(() => {
     setUrl(
-      "https://api.n2yo.com/rest/v1/satellite/positions/" +
+      // "https://api.n2yo.com/rest/v1/satellite/positions/" +
+      "/positions/" +
         noradid +
         "/" +
         location.latitude +

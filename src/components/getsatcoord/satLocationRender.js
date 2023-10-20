@@ -25,7 +25,7 @@ function SatLocationRender({ data }) {
 
   if (data) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite Positions</h1>
@@ -62,7 +62,7 @@ function SatLocationRender({ data }) {
     );
   } else {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellite Positions</h1>

@@ -26,7 +26,7 @@ function SatLocation({ type }) {
 
   if (!next) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Get Satellite Location</h1>

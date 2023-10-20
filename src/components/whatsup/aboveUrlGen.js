@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import apikey from "../apikey";
 import categories from "../categories";
 import GetApiList from "./getApiList";
 
-function AboveUrlGen({ location, radius, alitutude, category, type }) {
+function AboveUrlGen({ location, radius, alitutude }) {
   const [urlList, setUrlList] = useState([]);
-  const apiKey = apikey();
+  const apiKey = process.env.REACT_APP_API_KEY;
   const latitude = location.latitude;
   const longitude = location.longitude;
 
@@ -16,7 +15,8 @@ function AboveUrlGen({ location, radius, alitutude, category, type }) {
     for (let i in categories) {
       setUrlList((urls) => [
         ...urls,
-        "https://api.n2yo.com/rest/v1/satellite/above/" +
+        // "https://api.n2yo.com/rest/v1/satellite/above/" +
+        "/above/" +
           latitude +
           "/" +
           longitude +

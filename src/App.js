@@ -13,7 +13,7 @@ function App() {
 
   if (type == 0) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Stack gap={2} className="col-md-5 mx-auto">
           <Button variant="light" onClick={() => setType(4)}>
             Satellites above you
