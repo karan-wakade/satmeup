@@ -10,10 +10,8 @@ function AboutSatUrlGen({ noradid, type }) {
 
   useEffect(() => {
     setUrl(
-      "https://api.n2yo.com/rest/v1/satellite/tle/" +
-        noradid +
-        "&apiKey=" +
-        apiKey
+      // "https://api.n2yo.com/rest/v1/satellite/tle/" +
+      "/tle/" + noradid + "&apiKey=" + apiKey
     );
   }, []);
 
