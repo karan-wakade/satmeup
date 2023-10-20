@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/satmeup/static/css/main.073c9b0a.css",
-    "main.js": "/satmeup/static/js/main.3fd4e98f.js",
+    "main.js": "/satmeup/static/js/main.ea788a40.js",
     "static/js/787.040b6c25.chunk.js": "/satmeup/static/js/787.040b6c25.chunk.js",
     "index.html": "/satmeup/index.html",
     "main.073c9b0a.css.map": "/satmeup/static/css/main.073c9b0a.css.map",
-    "main.3fd4e98f.js.map": "/satmeup/static/js/main.3fd4e98f.js.map",
+    "main.ea788a40.js.map": "/satmeup/static/js/main.ea788a40.js.map",
     "787.040b6c25.chunk.js.map": "/satmeup/static/js/787.040b6c25.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.3fd4e98f.js"
+    "static/js/main.ea788a40.js"
   ]
 }
