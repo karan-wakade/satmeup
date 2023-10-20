@@ -11,7 +11,8 @@ function SatCoordUrlGen({ location, noradid, seconds, type }) {
 
   useEffect(() => {
     setUrl(
-      "https://api.n2yo.com/rest/v1/satellite/positions/" +
+      // "https://api.n2yo.com/rest/v1/satellite/positions/" +
+      "/positions/" +
         noradid +
         "/" +
         location.latitude +

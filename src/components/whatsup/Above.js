@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import GetUserCoords from "../getUserCoords";
-import categories from "../categories";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -11,11 +10,6 @@ function Above({ type }) {
   const [next, setNext] = useState(false);
   const [radius, setRadius] = useState(25);
   const [alitutude, setAltitude] = useState(0);
-  const [category, setCategory] = useState(10);
-
-  const handleSelect = (event) => {
-    setCategory(event.target.value);
-  };
 
   const handleAlt = (event) => {
     setAltitude(event.target.value);
@@ -31,7 +25,7 @@ function Above({ type }) {
 
   if (!next) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>See what's above you</h1>
@@ -65,12 +59,7 @@ function Above({ type }) {
   } else {
     return (
       <div>
-        <GetUserCoords
-          radius={radius}
-          alitutude={alitutude}
-          category={category}
-          type={type}
-        />
+        <GetUserCoords radius={radius} alitutude={alitutude} type={type} />
       </div>
     );
   }

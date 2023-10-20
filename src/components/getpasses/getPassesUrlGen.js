@@ -11,7 +11,8 @@ function GetPassesUrlGen({ location, noradid, days, minvisibility, type }) {
 
   useEffect(() => {
     setUrl(
-      "https://api.n2yo.com/rest/v1/satellite/visualpasses/" +
+      // "https://api.n2yo.com/rest/v1/satellite/visualpasses/" +
+      "/visualpasses/" +
         noradid +
         "/" +
         location.latitude +

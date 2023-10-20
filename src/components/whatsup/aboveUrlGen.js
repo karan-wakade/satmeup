@@ -4,7 +4,7 @@ import apikey from "../apikey";
 import categories from "../categories";
 import GetApiList from "./getApiList";
 
-function AboveUrlGen({ location, radius, alitutude, category, type }) {
+function AboveUrlGen({ location, radius, alitutude }) {
   const [urlList, setUrlList] = useState([]);
   const apiKey = apikey();
   const latitude = location.latitude;
@@ -16,7 +16,8 @@ function AboveUrlGen({ location, radius, alitutude, category, type }) {
     for (let i in categories) {
       setUrlList((urls) => [
         ...urls,
-        "https://api.n2yo.com/rest/v1/satellite/above/" +
+        // "https://api.n2yo.com/rest/v1/satellite/above/" +
+        "/above/" +
           latitude +
           "/" +
           longitude +

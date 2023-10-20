@@ -4,10 +4,6 @@ import FetchedData from "./fetchedData";
 
 function GetApi({ url, type }) {
   const [data, setData] = useState({});
-  const tempUrl =
-    "https://api.n2yo.com/rest/v1/satellite/tle/25544&apiKey=4AKCEP-GHVUGN-88RC4Y-53E5";
-
-  let k;
 
   useEffect(() => {
     fetch(url)

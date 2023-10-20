@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-// import FetchedData from "./fetchedData";
-// import AboveListRender from "./aboveListRender";
-// import AbovePassesRender from "./aboveRender";
 import FetchedApiList from "./fetchedApiList";
 
 function GetApiList({ urlList }) {
@@ -27,8 +24,6 @@ function GetApiList({ urlList }) {
 
   return (
     <div>
-      {/* <AboveListRender data={data} /> */}
-      {/* <AbovePassesRender dataList={data} /> */}
       <FetchedApiList dataList={data} />
     </div>
   );

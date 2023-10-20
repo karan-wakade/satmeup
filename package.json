@@ -3,6 +3,7 @@
   "name": "satmeup",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.n2yo.com/rest/v1/satellite",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

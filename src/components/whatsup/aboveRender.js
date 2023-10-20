@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-function AbovePassesRender({ dataList }) {
+function AboveRender({ dataList }) {
   function List({ data }) {
     if (data) {
       const list = data.above?.map((sat) => (
@@ -34,23 +34,24 @@ function AbovePassesRender({ dataList }) {
           <h3>{data.info.category}</h3>
           <h2></h2>
           <hr class="hr" />
-
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Satid</th>
-                <th>Satname</th>
-                <th>International designator</th>
-                <th>Launch date</th>
-                <th>Footprint latitude(degrees)</th>
-                <th>Footprint longitude(degrees)</th>
-                <th>Altitude(km)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <List data={data} />
-            </tbody>
-          </Table>
+          <div class="overflow-auto">
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Satid</th>
+                  <th>Satname</th>
+                  <th>International designator</th>
+                  <th>Launch date</th>
+                  <th>Footprint latitude(degrees)</th>
+                  <th>Footprint longitude(degrees)</th>
+                  <th>Altitude(km)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <List data={data} />
+              </tbody>
+            </Table>
+          </div>
         </div>
       );
       return list;
@@ -59,7 +60,7 @@ function AbovePassesRender({ dataList }) {
 
   if (dataList) {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellites above you</h1>
@@ -84,7 +85,7 @@ function AbovePassesRender({ dataList }) {
     );
   } else {
     return (
-      <div className="mt-5">
+      <div className="m-4">
         <Container>
           <Row className="justify-content-md-center">
             <h1>Satellites above you</h1>
@@ -105,4 +106,4 @@ function AbovePassesRender({ dataList }) {
   }
 }
 
-export default AbovePassesRender;
+export default AboveRender;
