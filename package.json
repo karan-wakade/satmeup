@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://satmeupbackend.onrender.com/",
   "homepage": "https://guywithashampoo.github.io/satmeup",
   "name": "satmeup",
   "version": "0.1.0",
