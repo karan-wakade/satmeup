@@ -10,8 +10,8 @@ function GetApi({ url, type }) {
       .then((response) => response.json())
       .then((obj) => {
         setData(obj);
-      });
-    // .catch((error) => console.log(error));
+      })
+      .catch((error) => console.log(error));
   }, [url]);
 
   return (

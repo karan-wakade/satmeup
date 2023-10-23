@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import GetPassesUrlGen from "./getpasses/getPassesUrlGen";
 import SatCoordUrlGen from "./getsatcoord/satCoordUrlGen";
 import AboveUrlGen from "./whatsup/aboveUrlGen";
+import Loading from "./loading";
 
 function GetUserCoords(props) {
   const [location, setLocation] = useState({});
@@ -13,24 +14,32 @@ function GetUserCoords(props) {
     });
   }, []);
 
-  if (props.type == 2) {
+  if (location == {}) {
     return (
       <div>
-        <SatCoordUrlGen location={location} {...props} />
+        <Loading msg={"Allow browser to use your location"} />
       </div>
     );
-  } else if (props.type == 3) {
-    return (
-      <div>
-        <GetPassesUrlGen location={location} {...props} />
-      </div>
-    );
-  } else if (props.type == 4) {
-    return (
-      <div>
-        <AboveUrlGen location={location} {...props} />
-      </div>
-    );
+  } else {
+    if (props.type == 2) {
+      return (
+        <div>
+          <SatCoordUrlGen location={location} {...props} />
+        </div>
+      );
+    } else if (props.type == 3) {
+      return (
+        <div>
+          <GetPassesUrlGen location={location} {...props} />
+        </div>
+      );
+    } else if (props.type == 4) {
+      return (
+        <div>
+          <AboveUrlGen location={location} {...props} />
+        </div>
+      );
+    }
   }
 }
 

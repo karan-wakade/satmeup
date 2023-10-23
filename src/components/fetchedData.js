@@ -16,7 +16,7 @@ function FetchedData({ data, type }) {
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading msg={"Fetching Data"} />;
   } else {
     if (type == 1) {
       return (
