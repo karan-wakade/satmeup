@@ -9,7 +9,7 @@ function FetchedApiList({ dataList }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 4200);
+    }, 4500);
   }, [dataList]);
 
   if (isLoading) {
