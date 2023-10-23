@@ -38,8 +38,8 @@ function AboveRender({ dataList }) {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>Satid</th>
-                  <th>Satname</th>
+                  <th>Sat id</th>
+                  <th>Sat Name</th>
                   <th>International designator</th>
                   <th>Launch date</th>
                   <th>Footprint latitude(degrees)</th>
