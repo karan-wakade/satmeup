@@ -1,6 +1,6 @@
 {
   "proxy": "https://satmeupbackend.onrender.com/",
-  "homepage": "https://guywithashampoo.github.io/satmeup",
+  "homepage": "https://satmeup.onrender.com",
   "name": "satmeup",
   "version": "0.1.0",
   "private": true,
