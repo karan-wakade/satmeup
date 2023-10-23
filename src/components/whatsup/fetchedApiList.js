@@ -13,7 +13,7 @@ function FetchedApiList({ dataList }) {
   }, [dataList]);
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading msg={"Fetching Data"} />;
   } else {
     return (
       <div>

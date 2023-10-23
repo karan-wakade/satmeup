@@ -8,12 +8,12 @@ import Row from "react-bootstrap/Row";
 
 function Above({ type }) {
   const [next, setNext] = useState(false);
-  const [radius, setRadius] = useState(25);
+  const [radius, setRadius] = useState(20);
   const [alitutude, setAltitude] = useState(0);
 
-  const handleAlt = (event) => {
-    setAltitude(event.target.value);
-  };
+  // const handleAlt = (event) => {
+  //   setAltitude(event.target.value);
+  // };
 
   const handleRad = (event) => {
     setRadius(event.target.value);
@@ -31,23 +31,22 @@ function Above({ type }) {
             <h1>See what's above you</h1>
             <h2></h2>
             <hr class="hr" />
-
+            {/* 
             <h3>Set Altitude(0-1000m)</h3>
             <h3>{alitutude}</h3>
             <Form.Range min="0" max="1000" step="1" onChange={handleAlt} />
 
             <h2></h2>
-            <hr class="hr" />
+            <hr class="hr" /> */}
 
-            <h3>Set Radius(1-90km)</h3>
+            {/* radius max = 90 */}
+            <h3>Set Radius(1-30km)</h3>
             <h3>{radius}</h3>
-            <Form.Range min="0" max="1000" step="1" onChange={handleRad} />
-
+            <Form.Range min="0" max="30" step="1" onChange={handleRad} />
             <h4></h4>
             <Button variant="light" onClick={() => setNext(!next)}>
               NEXT
             </Button>
-
             <h4></h4>
             <Button variant="secondary" onClick={reload}>
               RESET

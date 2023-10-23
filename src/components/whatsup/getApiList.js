@@ -17,8 +17,8 @@ function GetApiList({ urlList }) {
             }
             setData((data) => [...data, obj]);
           }
-        });
-      // .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
     }
   }, [urlList]);
 

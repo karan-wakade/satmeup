@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row";
 function SatLocation({ type }) {
   const [next, setNext] = useState(false);
   const [noradid, setNoradid] = useState(25544);
-  const [seconds, setSeconds] = useState(150);
+  const [seconds, setSeconds] = useState(50);
 
   const handleSelect = (event) => {
     setNoradid(event.target.value);
@@ -33,9 +33,10 @@ function SatLocation({ type }) {
             <h2></h2>
             <hr class="hr" />
 
-            <h3>Set Time(1-300s)</h3>
+            {/* time max = 300s */}
+            <h3>Set Time(1-100s)</h3>
             <h3>{seconds}</h3>
-            <Form.Range min="0" max="300" step="1" onChange={handleChange} />
+            <Form.Range min="0" max="100" step="1" onChange={handleChange} />
 
             <h2></h2>
             <hr class="hr" />

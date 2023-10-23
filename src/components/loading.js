@@ -4,9 +4,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
 
-function Loading() {
+function Loading({ msg }) {
   return (
     <div className="m-4">
+      <h1>{msg}</h1>
+
       <div class="d-flex justify-content-center">
         <Container>
           <Row className="justify-content-md-center">
