@@ -29,7 +29,7 @@ function GetPassesUrlGen({ location, noradid, days, minvisibility, type }) {
 
     setUrl(
       // "https://api.n2yo.com/rest/v1/satellite/visualpasses/" +
-      "/api/passes?norad=" +
+      "https://satmeupbackend.onrender.com/api/passes?norad=" +
         noradid +
         "&latitude=" +
         location.latitude +

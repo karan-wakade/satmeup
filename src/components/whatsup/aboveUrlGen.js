@@ -33,7 +33,7 @@ function AboveUrlGen({ location, radius, alitutude }) {
       setUrlList((urls) => [
         ...urls,
         // "https://api.n2yo.com/rest/v1/satellite/above/" +
-        "/api/above?latitude=" +
+        "https://satmeupbackend.onrender.com/api/above?latitude=" +
           latitude +
           "&longitude=" +
           longitude +

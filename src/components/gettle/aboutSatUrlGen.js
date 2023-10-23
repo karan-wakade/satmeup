@@ -15,7 +15,7 @@ function AboutSatUrlGen({ noradid, type }) {
 
     setUrl(
       // "https://api.n2yo.com/rest/v1/satellite/tle/" +
-      "/api/tle?norad=" + noradid
+      "https://satmeupbackend.onrender.com/api/tle?norad=" + noradid
     );
   }, []);
 

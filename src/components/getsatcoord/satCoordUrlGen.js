@@ -27,7 +27,7 @@ function SatCoordUrlGen({ location, noradid, seconds, type }) {
 
     setUrl(
       // "https://api.n2yo.com/rest/v1/satellite/positions/" +
-      "/api/coord?norad=" +
+      "https://satmeupbackend.onrender.com/api/coord?norad=" +
         noradid +
         "&latitude=" +
         location.latitude +
